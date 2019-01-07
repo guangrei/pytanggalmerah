@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from pytanggalmerah import TanggalMerah
 import unittest
 
