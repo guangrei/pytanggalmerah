@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+from pytanggalmerah import TanggalMerah
+import sys
+import os
+
+
+argv = sys.argv
+del argv[0]
+t = TanggalMerah()
+if os.getenv("TIMEZSET") is not None:
+    t.set_timezone(os.getenv("TIMEZSET"))
+if len(argv) == 3:
+    t.set_date(*argv)
+    if t.is_holiday():
+        print("".join(t.get_event()))
+    else:
+        print("bukan hari libur!")
+else:
+    if t.is_holiday():
+        print("".join(t.get_event()))
+    else:
+        print("bukan hari libur!")

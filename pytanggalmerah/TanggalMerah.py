@@ -1,21 +1,17 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from pytz import timezone
-import requests
+from .myrequests import MyRequests
 import json
 
 
 class TanggalMerah:
-    def __init__(self, local=None):
+    def __init__(self, cache_path=None, cache_time=600):
         self.event = set([])
         self.date = datetime.now(timezone("Asia/Jakarta"))
-        if local is None:
-            r = requests.get(
-                "https://github.com/guangrei/Json-Indonesia-holidays/raw/master/calendar.json")
-            self.data = json.loads(r.content.decode("utf-8"))
-        else:
-            with open(local) as f:
-                self.data = json.load(f)
+        req = MyRequests("https://github.com/guangrei/Json-Indonesia-holidays/raw/master/calendar.min.json",
+                         cache_path=cache_path, cache_time=cache_time)
+        self.data = json.loads(req.response)
 
     # end __init_()
 

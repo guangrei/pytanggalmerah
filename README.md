@@ -13,7 +13,7 @@ pip install pytanggalmerah
 ``` python
 from pytanggalmerah import TanggalMerah
 
-t = TanggalMerah()
+t = TanggalMerah(cache_path = None, cache_time = 600) # cache_path = None berarti directory cache automatis
 t.check() # mengecek apakah tanggal merah, return boolean.
 t.is_holiday() # mengecek apakah hari libur nasional, return  boolean.
 t.is_sunday() # mengecek apakah hari minggu, return booelan.
@@ -34,17 +34,17 @@ secara default zona waktu pytanggalmerah adalah Asia/Jakarta tapi bisa diubah, s
 t.set_timezone("Asia/Makassar")
 t.check()
 ```
- **menggunakan module offline**
+ **menggunakan lewat terminal**
 
-untuk memastikan data slalu update module ini mengharuskan terhubung ke internet, namun opsi untuk menggunakan offline juga tersedia.
-
-pastikan sudah mendownload [calendar.json](https://github.com/guangrei/Json-Indonesia-holidays/raw/master/calendar.json)
-
-
-```python
-t = TanggalMerah("lokasi/calendar.json")
 
 ```
+$ harilibur # check harilibur
+$ harilibur 2022 04 15 # check harilibur dengan spesifikasi
+$ TIMEZSET = "Asia/Makasar"; harilibur # mengecek harilibur dengan spesifikasi timezone
+
+```
+
+> harilibur command hanya mengecek tanggal merah dan tidak termasuk hari minggu.
 ### sumber data
 
 **pytanggalmerah** menggunakan data yang bersumber dari google calendar, data yang telah lampau mungkin tidak tersedia & data yang sekarang masih bisa direvisi.
