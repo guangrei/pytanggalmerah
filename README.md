@@ -40,7 +40,7 @@ t.check()
 ```
 $ harilibur # check harilibur
 $ harilibur 2022 04 15 # check harilibur dengan spesifikasi
-$ TIMEZSET = "Asia/Makasar"; harilibur # mengecek harilibur dengan spesifikasi timezone
+$ TIMEZSET = "Asia/Makasar" harilibur # mengecek harilibur dengan spesifikasi timezone
 
 ```
 
