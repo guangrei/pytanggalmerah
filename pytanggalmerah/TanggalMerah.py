@@ -6,11 +6,10 @@ import json
 
 
 class TanggalMerah:
-    def __init__(self, cache_path=None, cache_time=600):
+    def __init__(self, cache_path = None, cache_time = 600):
         self.event = set([])
         self.date = datetime.now(timezone("Asia/Jakarta"))
-        req = MyRequests("https://github.com/guangrei/Json-Indonesia-holidays/raw/master/calendar.min.json",
-                         cache_path=cache_path, cache_time=cache_time)
+        req = MyRequests("https://raw.githubusercontent.com/guangrei/APIHariLibur_V2/main/calendar.min.json", cache_path = cache_path, cache_time = cache_time)  
         self.data = json.loads(req.response)
 
     # end __init_()
@@ -38,11 +37,11 @@ class TanggalMerah:
     # end is_sunday()
 
     def is_holiday(self):
-        try:
-            d = self.date
-            self.event.add(self.data[d.strftime("%Y%m%d")]['deskripsi'])
+        d = self.date.strftime("%Y-%m-%d")
+        if d in self.data and self.data[d]['holiday']:
+            self.event.add(" | ".join(self.data[d]['summary']))
             return True
-        except KeyError:
+        else:
             return False
 
     # end is_holiday()

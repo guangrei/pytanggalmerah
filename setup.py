@@ -15,9 +15,9 @@ with open(path.join(this_directory, 'README.md')) as f:
 
 setup(
     name='Pytanggalmerah',
-    version='2.0.1',
-    packages=['pytanggalmerah', 'pytanggalmerahcache'],
-    scripts=["harilibur"],
+    version='3.0.1',
+    packages=['pytanggalmerah','pytanggalmerahcache'],
+    scripts = ["harilibur"],
     license='MIT',
     author="guangrei",
     author_email="myawn@pm.me",
@@ -26,5 +26,5 @@ setup(
     long_description_content_type='text/markdown',
     keywords="holiday indonesia calendar sunday",
     url="https://github.com/guangrei/pytanggalmerah",
-    install_requires=requirements,
+    install_requires=requirements,    
 )
