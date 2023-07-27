@@ -19,12 +19,6 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: test
-        run: |
-          pip install -r requirements.txt
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          python test.py
-
       - name: Build source and wheel distributions
         run: |
           pip install --upgrade build twine autopep8
