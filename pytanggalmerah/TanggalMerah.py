@@ -5,11 +5,12 @@ from .myrequests import MyRequests
 import json
 
 
+in_cache_path = os.path.abspath(os.path.dirname(__file__)) + "/cache/"
 class TanggalMerah:
     def __init__(self, cache_path = None, cache_time = 600):
         self.event = set([])
         self.date = datetime.now(timezone("Asia/Jakarta"))
-        req = MyRequests("https://raw.githubusercontent.com/guangrei/APIHariLibur_V2/main/calendar.min.json", cache_path = cache_path, cache_time = cache_time)  
+        req = MyRequests("https://raw.githubusercontent.com/guangrei/APIHariLibur_V2/main/holidays.json", cache_path = in_cache_path, cache_time = cache_time)  
         self.data = json.loads(req.response)
 
     # end __init_()
@@ -38,8 +39,8 @@ class TanggalMerah:
 
     def is_holiday(self):
         d = self.date.strftime("%Y-%m-%d")
-        if d in self.data and self.data[d]['holiday']:
-            self.event.add(" | ".join(self.data[d]['summary']))
+        if d in self.data:
+            self.event.add(self.data[d]['summary'])
             return True
         else:
             return False

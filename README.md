@@ -1,4 +1,5 @@
-[![status workflow](https://github.com/guangrei/pytanggalmerah/actions/workflows/python-app.yml/badge.svg)](https://github.com/guangrei/pytanggalmerah/actions)
+[![status workflow test](https://github.com/guangrei/pytanggalmerah/actions/workflows/python-app.yml/badge.svg)](https://github.com/guangrei/pytanggalmerah/actions) [![status workflow build](https://github.com/guangrei/pytanggalmerah/actions/workflows/release_to_pypi.yml/badge.svg)](https://github.com/guangrei/pytanggalmerah/actions)
+
 
 **Pytanggalmerah** adalah module python untuk mengecek tanggal merah berdasarkan hari minggu dan hari libur nasional.
 

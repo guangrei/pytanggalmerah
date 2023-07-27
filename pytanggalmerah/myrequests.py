@@ -2,7 +2,6 @@
 import requests
 from zcache import Cache
 from urllib import parse
-import pytanggalmerahcache
 import os
 
 
@@ -10,9 +9,6 @@ class MyRequests(object):
     def __init__(self, url, cache_time, cache_path=None):
 
         u_en = parse.quote_plus(url)  # url encode
-        if cache_path is None:
-            cache_path = os.path.abspath(
-                os.path.dirname(pytanggalmerahcache.__file__))
         cache = Cache(path=cache_path)
         if cache.has(u_en):
             self.response = cache.get(u_en)
