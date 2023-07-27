@@ -3,6 +3,7 @@ from datetime import datetime
 from pytz import timezone
 from .myrequests import MyRequests
 import json
+import os
 
 
 in_cache_path = os.path.abspath(os.path.dirname(__file__)) + "/cache/"
