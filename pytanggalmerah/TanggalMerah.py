@@ -6,7 +6,8 @@ import json
 import os
 
 
-in_cache_path = os.path.abspath(os.path.dirname(__file__)) + "/cache/"
+in_cache_path = os.path.abspath(os.path.dirname(__file__))
+
 class TanggalMerah:
     def __init__(self, cache_path = None, cache_time = 600):
         self.event = set([])

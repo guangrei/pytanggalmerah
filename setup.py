@@ -15,7 +15,7 @@ with open(path.join(this_directory, 'README.md')) as f:
 
 setup(
     name='Pytanggalmerah',
-    version='3.1.0',
+    version='3.1.1',
     packages=['pytanggalmerah'],
     scripts = ["harilibur"],
     license='MIT',

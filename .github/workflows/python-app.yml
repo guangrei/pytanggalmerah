@@ -36,3 +36,9 @@ jobs:
     - name: Test with unittest
       run: |
         python test.py
+
+    - name: Test harilibur
+      run: |
+        python setup.py install
+        harilibur
+        harilibur 2023 12 25
