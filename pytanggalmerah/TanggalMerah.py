@@ -28,6 +28,16 @@ class TanggalMerah:
         return True in check
     # end check()
 
+    # new feature: checking if the date is Saturday
+    def is_saturday(self):
+        now = self.date
+        day = now.strftime("%A")
+        if day == "Saturday":
+            self.event.add("saturday")
+            return True
+        else:
+            return False
+
     def is_sunday(self):
         now = self.date
         day = now.strftime("%A")
